@@ -21,6 +21,8 @@ Type in the search box at the top of the form. After 2 or more characters, with 
 
 When a key is present, the autocomplete uses the Google Places API, which can return ratings, opening hours, photos, and phone numbers from Google's database.
 
+> **Enable Google Places API:** You must enable the [Places API (new)](https://console.cloud.google.com/apis/library/places.googleapis.com) in your Project through Google Cloud Console. If this is not enabled, the API key will be reported as **Invalid**.
+
 > **API key restrictions:** TREK calls the Google Places API from the server, not the browser. If you apply **HTTP referrers** restrictions to your key in Google Cloud Console, you must also set `APP_URL` in your environment — TREK sends it as the `Referer` header on every outbound Google API request. Without it, Google will reject all server-side calls with `REQUEST_DENIED`. For server-side deployments, **IP address** restrictions are simpler and require no extra configuration. See [Troubleshooting](Troubleshooting) if photos are missing after adding a key.
 
 ### Without a Google Maps API key
